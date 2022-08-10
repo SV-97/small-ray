@@ -378,6 +378,9 @@ pub type TopologicalTriangle = [usize; 3];
 
 impl TryFrom<Vec<TopologicalTriangle>> for TopologicalHalfEdgeMesh {
     type Error = ();
+    /// Generates a mesh from the given triangle data - note that this will fail for non-connected
+    /// and non-manifold meshes.
+    ///
     /// Note that each half-edge is contained in at most one triangle. If it's not inside a
     /// triangle it's on the boundary.
     ///
