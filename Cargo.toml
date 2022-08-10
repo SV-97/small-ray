@@ -1,0 +1,13 @@
+[package]
+name = "small-ray"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nalgebra = "0.31.0"
+stl = "0.2.1"
+wavefront_obj = "10.0.0"
+itertools = "0.10.3"
+either = "1.7.0"
