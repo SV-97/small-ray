@@ -1,22 +1,9 @@
 #![allow(dead_code)]
 
-use std::collections::HashMap;
-
 // mod trampoline;
 
 mod mesh;
-use mesh::{topological::TopologicalHalfEdgeMesh, Edge, Vertex};
-
-#[derive(Clone, Debug, Eq, PartialEq)]
-struct GeometricHalfEdgeMesh<T> {
-    /// All the vertices in the mesh
-    vertices: Vec<Vertex<T>>,
-    edges: Vec<Edge<T>>,
-    edge_idxs: HashMap<(usize, usize), usize>,
-    boundary_cycles: Vec<Vec<usize>>,
-}
-
-impl<T: Copy> GeometricHalfEdgeMesh<T> {}
+use mesh::{topological::TopologicalHalfEdgeMesh, Vertex};
 
 fn main() {
     let path = "/home/stefan/GitHub/small-ray/resources/\
@@ -87,5 +74,5 @@ fn main() {
     //     [11, 14, 15],
     //     [11, 12, 15],
     // ];
-    dbg!(TopologicalHalfEdgeMesh::try_from(triangles).unwrap());
+    dbg!(topological::TopologicalHalfEdgeMesh::try_from(triangles).unwrap());
 }

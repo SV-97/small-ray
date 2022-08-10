@@ -1,6 +1,7 @@
 use std::cmp::Ordering;
 use std::fmt::Write as FmtWrite;
 
+pub mod geometric;
 pub mod topological;
 
 /// An abstract vertex
